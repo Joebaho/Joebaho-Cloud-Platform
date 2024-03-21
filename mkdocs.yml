@@ -1,0 +1,17 @@
+site_name: Joebaho Cloud Platform (JCP)
+theme:
+  name: mkdocs
+nav:
+  - Home: index.md
+  - About: about.md
+  - Projects:
+    - Static Web Hosting on S3: static-web-on-aws.md
+    - VPC Foundation on AWS: vpc-foundation-terraform-on-aws.md
+    - 2 Tier Architecture on AWS with Terraform: 2-tier-terraform-on-aws.md
+    - Ansible Deployment on AWS: ansible-terraform-on-aws.md
+    - 3 Tier Architecture on AWS with Terraform: 3-tier-terraform-on-aws.md
+    - Docker beginning: bash-scripting.md
+    - Docker Compose Beginner: netflix-ish-deployment.md
+    - Kubernetes-Minijube Cluster: aws-continuous-delivery.md
+    - Netflix Video Deployment: microservices-bookStore.md
+    - VPC Flow Logs on AWS: vpc-flow-logs-on-aws.md
