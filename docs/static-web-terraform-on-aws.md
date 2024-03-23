@@ -73,7 +73,7 @@ You need to write different files generating resources
 
 Here we declare our cloud provider and we specify the region where we will be launching resources
 
-- [provider Configuration](https://github.com/Joebaho/Joebaho-Cloud-Platform/blob/main/site/static-web-terraform-on-aws/provider.tf)
+- [provider Configuration](https://github.com/Joebaho/Joebaho-Cloud-Platform/blob/main/site/static-web-terraform-on-aws/providers.tf)
 
 
 ##### Step 3: ***S3 Configuration***
