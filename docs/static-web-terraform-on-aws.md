@@ -106,7 +106,7 @@ Follow these steps to deploy the architecture:
 Clone the repository in your local machine using the command "git clone" 
 <br>
 >
-   git clone https://github.com/Joebaho/Joebaho-Cloud-Platform/tree/main/site/static-web-terraform-on-aws
+   git clone https://github.com/Joebaho/Joebaho-Cloud-Platform/tree/main/docs/static-web-terraform-on-aws
    
 <br>
 ##### Step 6: ***Initialize Folder***

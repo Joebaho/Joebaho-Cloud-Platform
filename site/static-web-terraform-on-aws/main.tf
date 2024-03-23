@@ -1,5 +1,5 @@
 resource "aws_s3_bucket" "bucket1" {
-    bucket = "web-bucket-mathesh"
+    bucket = "web-bucket-joebaho"
   
 }
 resource "aws_s3_bucket_public_access_block" "bucket1" {
@@ -11,22 +11,38 @@ resource "aws_s3_bucket_public_access_block" "bucket1" {
   restrict_public_buckets = false
 }
 
+resource "aws_s3_bucket_ownership_controls" "example" {
+  bucket = aws_s3_bucket.bucket1.id
+  rule{
+    object_ownership ="BucketOwnerPreferred"
+  }
+}
+
+resource "aws_s3_bucket_acl" "bucket_access"{
+  depends_on = [
+    aws_s3_bucket_ownership_controls.example, 
+    aws_s3_bucket_public_access_block.bucket1,
+  ]
+  bucket = aws_s3_bucket.bucket1.id
+  acl = "public-read"
+}
+
 resource "aws_s3_object" "index" {
-  bucket = "web-bucket-mathesh"
+  bucket = "web-bucket-joebaho"
   key    = "index.html"
   source = "index.html"
   content_type = "text/html"
 }
 
 resource "aws_s3_object" "error" {
-  bucket = "web-bucket-mathesh"
+  bucket = "web-bucket-joebaho"
   key    = "error.html"
   source = "error.html"
   content_type = "text/html"
 }
 
 
-resource "aws_s3_bucket_website_configuration" "bucket1" {
+resource "aws_s3_bucket_website_configuration" "static-web-config" {
   bucket = aws_s3_bucket.bucket1.id
 
   index_document {
@@ -47,7 +63,7 @@ resource "aws_s3_bucket_policy" "public_read_access" {
   "Statement": [
     {
       "Effect": "Allow",
-	  "Principal": "*",
+	    "Principal": "*",
       "Action": [ "s3:GetObject" ],
       "Resource": [
         "${aws_s3_bucket.bucket1.arn}",
