@@ -178,7 +178,7 @@ Step 9: Initialize Folder
 
 Initialize the folder containing configuation files that were clone to Terraform and apply the configuration by typing  the following command
   
-   ```bash
+   ``` bash
    terraform init
    ```
 

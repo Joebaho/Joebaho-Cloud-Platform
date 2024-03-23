@@ -26,7 +26,7 @@ Terraform is an IaC software tool that provides a consistent command line interf
 
 ## 📌 Architecture Diagram
 
-![alt text](assets/images/terraform-on-aws/3-tier-application-architecture.jpg)
+![alt text](assets/images/vpc-foundation-terraform-on-aws/Web App Reference Architecture (2).png)
 
 ## 🌟 Project Requirements
 
@@ -43,7 +43,7 @@ You must also know Terraform workflow
 
 ## 📋 Table of Contents
 
-I - Terraform Configuration files
+I - **Terraform Configuration files**
   
   [Step 1: Provider Configuration](#-Provider-configuration)
 
@@ -53,7 +53,7 @@ I - Terraform Configuration files
 
   [Step 4: Output Configuration](#-Output-configuration)
 
-II - Instructions of Deployment
+II - **Instructions of Deployment**
 
   [Step 5: Clone Repository](#-Clone-Repository)
 
@@ -69,19 +69,24 @@ II - Instructions of Deployment
 
   [Step 11: Review of Resources](#-Review-Of-Resources)
 
-  [Step 12: Destroy](#-Destroy)
+  [Step 12: Destroy](#-Destroy) 
+  
+<br>
 
 ## ✨Terraform Configuration files 
 
+<br>
 You need to write different files generating resources
+<br>
 
-Step 1:  Provider Configuration
+
+##### Step 1:  ***Provider Configuration***
 
 Here we declare our cloud provider and we specify the region where we will be launching resources
 
-- [provider Configuration](vpc-foundation-terraform-on-aws/main.tf)
+- [provider Configuration](https://github.com/Joebaho/Joebaho-Cloud-Platform/blob/main/site/vpc-foundation-terraform-on-aws/providers.tf)
 
-Step 2:  Variables Configuration
+##### Step 2:  ***Variables Configuration***
 
 This is where we declare all variables and thier value. It includes
 
@@ -90,77 +95,83 @@ This is where we declare all variables and thier value. It includes
 
 We have 
 
-- [variables Configuration](https://github.com/cloudspaceacademy/terraform-on-aws/blob/main/variables.tf)
-- [value Configuration](https://github.com/cloudspaceacademy/terraform-on-aws/blob/main/terraform.tfvars)
+- [variables Configuration](https://github.com/Joebaho/Joebaho-Cloud-Platform/blob/main/site/vpc-foundation-terraform-on-aws/variables.tf)
+- [value Configuration](https://github.com/Joebaho/Joebaho-Cloud-Platform/blob/main/site/vpc-foundation-terraform-on-aws/terraform.tfvars)
 
-Step 3: VPC Configuration
+##### Step 3: ***VPC Configuration***
 
 This is where you create the basement, foundation and networking where all the resources will be launch. It includes VPC, Subnets, IGW, NatGateway, EIP and Route tables
 
-- [VPC Configuration](https://github.com/cloudspaceacademy/terraform-on-aws/blob/main/vpc.tf)
+- [VPC Configuration](https://github.com/Joebaho/Joebaho-Cloud-Platform/blob/main/site/vpc-foundation-terraform-on-aws/main.tf)
+
+We have here
 
 - **Web Servers**: These run your application code that contains the apache which will deploy the index.html located in the user data.
 - **Load Balancer**: Distributes traffic across multiple web servers running in the public subnets.
 - **Auto Scaling**: Automatically adjusts the number of web servers based on traffic.
 - **Security Groups**: Controls incoming and outgoing traffic from outside to the web servers.
 
-Step 4: Output Configuration
+##### Step 4: ***Output Configuration***
 
 Know as Output Value : it is a convenient way to get useful information about your infranstructure printed on the CLI. It is showing the ARN, name or ID of a resource. In this case we are bringing out the DNS name of the web application Load balancer.  
 
-- [Output Configuration](https://github.com/cloudspaceacademy/terraform-on-aws/blob/main/outputs.tf)
+- [Output Configuration](https://github.com/Joebaho/Joebaho-Cloud-Platform/blob/main/site/vpc-foundation-terraform-on-aws/outputs.tf)
 
 ## 💼 Instructions of Deployment
-
+<br>
 Follow these steps to deploy the architecture:
+<br>
 
-Step 5: Clone Repository:
+##### Step 5: ***Clone Repository:***
 
+<br>
 Clone the repository in your local machine using the command "git clone" 
+<br>
+>
+   git clone https://github.com/Joebaho/Joebaho-Cloud-Platform/tree/main/site/vpc-foundation-terraform-on-aws
+   
+<br>
+##### Step 6: ***Initialize Folder***
 
-   ```bash
-   git clone https://github.com/cloudspaceacademy/terraform-on-aws.git
-   ```
-
-Step 6: Initialize Folder
-
+<br>
 Initialize the folder containing configuation files that were clone to Terraform and apply the configuration by typing  the following command
-  
-   ```bash
+ <br> 
+>
    terraform init
-   ```
-
+   
+<br>
    You must see this image
 
    ![alt text](assets/images/vpc-foundation-terraform-on-aws/terraform-init.jpg)
 
-Step 7: Format Files
-
+##### Step 7: ***Format Files***
+<br>
 Apply any changes on files and Review the changes and confirm the good format with command:
    
-   ```bash
+>
    terraform fmt
-   ```
-   
-Step 8: Validate Files
 
+ <br>  
+##### Step 8: ***Validate Files***
+
+<br>
 Ensure that every files are syntactically valid and ready to go with the command: 
    
-   ```bash
+>
    terraform validate
-   ```
+
 
    If everything is good you will have something like this 
 
   ![alt text](assets/images/vpc-foundation-terraform-on-aws/terraform-validate.jpg) 
 
-Step 9: Plan
-
+##### Step 9: ***Plan***
+<br>
 Create an excution plan to provide the achievement of the desired state. It Check and confirm the numbers of resources that will be create. Use command:
    
-   ```bash
+>
    terraform plan
-   ```
+
    
    The list of all resources in stage of creation will appear and you can see all properties(arguments and attributs) of each resouces
 
@@ -168,13 +179,14 @@ Create an excution plan to provide the achievement of the desired state. It Chec
 
    ![alt text](assets/images/vpc-foundation-terraform-on-aws/terraform-plan2.jpg) 
 
-Step 10: Apply
+##### Step 10: ***Apply***
 
+<br>
 Bring all desired state resources on life. It Launch and create all resources listed in the configuration files. The command to perform the task is:  
    
-   ```bash
+>
    terraform apply -auto-approve
-   ```
+
 
 You will be prompt to type the username and password for the database. After you enter those criticals data the process of creation will start and you will be able to see which resourse is on the way to be create and the time it taking to create.
 
@@ -182,45 +194,47 @@ At the end you will recieve a prompt message showing all resources status: creat
 
    ![alt text](assets/images/vpc-foundation-terraform-on-aws/terraform-apply.jpg)  
 
-Step 11: Review of resources
+##### Step 11: ***Review of resources***
 
+<br>
 Go back on the console and check all actual state resources one by one to see. You will have
 
   
-VPC
+- **VPC**
 
    ![alt text](assets/images/vpc-foundation-terraform-on-aws/vpc.jpg) 
 
    
-Subnets
+- **Subnets**
 
    ![alt text](assets/images/vpc-foundation-terraform-on-aws/subnets.jpg) 
 
    
-IGW
+- **IGW**
 
    ![alt text](assets/images/vpc-foundation-terraform-on-aws/IGW.jpg) 
 
    
-Route Tables
+- **Route Tables**
 
 
    ![alt text](assets/images/vpc-foundation-terraform-on-aws/public-route-table.jpg) 
 
   
-NCAL
+- **NCAL**
 
 
    ![alt text](assets/images/vpc-foundation-terraform-on-aws/NCAL.jpg) 
 
 
-Step 12: Destroy
+##### Step 12: ***Destroy*** <br>
 
+<br>
 Destroy the terraform managed infrastructure meaning all resourcescreated will be shut down. This action can be done with the command "terraform destroy" 
    
-   ```bash
+ >  
    terraform destroy -auto-approve
-   ```
+   
    
 
 At the end you will recieve a prompt message showing all resources has been destroyed

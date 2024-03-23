@@ -92,6 +92,8 @@ Here we declare our foundation or networking environment. We have here vpc, subn
 
  We will be launching two EC2 intances in the public subnets with user data attached on them. We will use the public Ip address to display the content on the browser. 
 
+ [User-data](https://github.com/Joebaho/Joebaho-Cloud-Platform/blob/main/site/vpc-flow-logs-on-aws/userdata.sh) 
+
  Instance 1
 
 ![alt text](assets/images/vpc-flow-logs-on-aws/instance1.jpg)
