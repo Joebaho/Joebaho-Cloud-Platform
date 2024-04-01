@@ -6,7 +6,7 @@ nav:
   - About: about.md
   - Projects:
     - Static Web Hosting on S3 with Terraform: static-web-terraform-on-aws.md
-    - VPC Foundation on AWS usung Terraform: vpc-foundation-terraform-on-aws.md
+    - VPC Foundation on AWS with Terraform: vpc-foundation-terraform-on-aws.md
     - 2 Tier Architecture on AWS with Terraform: 2-tier-terraform-on-aws.md
     - Ansible Deployment on AWS with Terraform: ansible-terraform-on-aws.md
     - 3 Tier Architecture on AWS with Terraform: 3-tier-terraform-on-aws.md

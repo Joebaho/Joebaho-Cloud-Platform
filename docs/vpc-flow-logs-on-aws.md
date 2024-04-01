@@ -26,7 +26,7 @@ In complex cloud environments hosted on AWS, maintaining comprehensive visibilit
 
 ## 📌 Architecture Diagram
 
-![alt text](assets/images/terraform-on-aws/3-tier-application-architecture.jpg)
+![alt text](assets/images/terraform-on-aws/vpcflowlogs-architecture.jpg)
 
 ## 🌟 Project Requirements
 
@@ -170,7 +170,7 @@ A destination where the logs will be dump must be specify.There are multiple pla
 
 ![alt text](assets/images/vpc-flow-logs-on-aws/flowlogs2.jpg)
 
-At the end we have declare the format of the ouptput of the logs. Either we can customize it oe use the AWS default format 
+At the end we have declare the format of the ouptput of the logs. Either we can customize it to use the AWS default format 
 
 ![alt text](assets/images/vpc-flow-logs-on-aws/flowlogs3.jpg)
 
@@ -233,12 +233,15 @@ Use VPC Flow Logs for compliance and auditing purposes. Maintain records of netw
 
 Integrate VPC Flow Logs with other AWS services or third-party tools for advanced analysis and visualization. For example, you can use Amazon Athena or Amazon Elasticsearch Service to perform ad-hoc queries and visualize network traffic data for deeper insights.
 
-Take a look an exampleof output 
+Take a look an example of output 
 
 ![alt text](assets/images/vpc-flow-logs-on-aws/details.jpg)
 
 By understanding and analyzing VPC Flow Logs, you can gain valuable visibility into your AWS VPC's network traffic, enhance security monitoring, troubleshoot network issues, and ensure compliance with regulatory requirements.
 
+## 🤝 Contributing
+
+Your perspective is valuable! Whether you see potential for improvement or appreciate what's already here, your contributions are welcomed and appreciated. Thank you for considering joining us in making this project even better. Feel free to follow me for updates on this project and others, and to explore opportunities for collaboration. Together, we can create something amazing!
 ## 📄 License
 
 This project is licensed under the Joebaho Cloud License

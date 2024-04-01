@@ -17,7 +17,7 @@ Terraform is an IaC software tool that provides a consistent command line interf
 
 ## 📌 Architecture Diagram
 
-![alt text](assets/images/vpc-foundation-terraform-on-aws/Web App Reference Architecture (2).png)
+ ![alt text](assets/images/static-web-terraform-on-aws/staticweb-architecture.png)
 
 ## 🌟 Project Requirements
 
@@ -224,6 +224,9 @@ At the end you will recieve a prompt message showing all resources has been dest
 
    ![alt text](assets/images/static-web-terraform-on-aws/terraform-destroy.jpg)  
 
+## 🤝 Contributing
+
+Your perspective is valuable! Whether you see potential for improvement or appreciate what's already here, your contributions are welcomed and appreciated. Thank you for considering joining us in making this project even better. Feel free to follow me for updates on this project and others, and to explore opportunities for collaboration. Together, we can create something amazing!
 
 ## 📄 License
 

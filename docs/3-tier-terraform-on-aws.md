@@ -285,6 +285,9 @@ At the end you will recieve a prompt message showing all resources has been dest
 
    ![alt text](assets/images/3-tier-terraform-on-aws/terraform-destroy.jpg)  
 
+## 🤝 Contributing
+
+Your perspective is valuable! Whether you see potential for improvement or appreciate what's already here, your contributions are welcomed and appreciated. Thank you for considering joining us in making this project even better. Feel free to follow me for updates on this project and others, and to explore opportunities for collaboration. Together, we can create something amazing!
 
 ## 📄 License
 
