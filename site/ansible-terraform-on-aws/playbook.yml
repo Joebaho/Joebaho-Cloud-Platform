@@ -4,11 +4,11 @@
   hosts: linux-nodes
   tasks:
     - name: Upgrade all apache nodes # yum update -y 
-      ansible.builtin.dnf:  # the new package of httpd linux is dnf instead of yum 
+      ansible.builtin.yum:  # the new package of httpd linux is dnf instead of yum 
         name: '*'
         state: latest
     - name: Install the latest version of Apache on the nodes #yum install httpd -y
-      ansible.builtin.dnf:
+      ansible.builtin.yum:
         name: httpd
         state: latest 
     - name: start httpd # systemctl start httpd
@@ -26,7 +26,7 @@
       notify: 
         - restarting apache 
     - name: install git
-      dnf:
+      yum:
         name: git
         state: present  
   handlers:
